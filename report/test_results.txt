@@ -1,0 +1,99 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.2, pytest-9.1.1, pluggy-1.7.0 -- C:\Users\Veronika\Documents\Codex\2026-10-27\db\outputs\SportsResultsLab06\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Veronika\Documents\Codex\2026-10-27\db\outputs\SportsResultsLab06
+configfile: pyproject.toml
+testpaths: tests
+plugins: asyncio-1.4.1, cov-7.1.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 61 items
+
+tests/integration/test_main_failures.py::test_cli_negative_limit_exits_one PASSED [  1%]
+tests/integration/test_main_failures.py::test_cli_strict_error_preserves_old_output PASSED [  3%]
+tests/integration/test_main_failures.py::test_cli_handles_logging_io_failure PASSED [  4%]
+tests/integration/test_main_failures.py::test_cli_positive_limit_processes_only_requested_rows PASSED [  6%]
+tests/integration/test_sports_pipeline.py::test_csv_validation_to_json_and_error_csv PASSED [  8%]
+tests/integration/test_sports_pipeline.py::test_strict_failure_preserves_previous_json_and_cleans_temp PASSED [  9%]
+tests/integration/test_sports_pipeline.py::test_external_provider_ranking_integration PASSED [ 11%]
+tests/integration/test_sports_pipeline.py::test_cli_runs_config_to_atomic_outputs PASSED [ 13%]
+tests/unit/test_analytics.py::test_rank_returns_lowest_n PASSED          [ 14%]
+tests/unit/test_analytics.py::test_rank_rejects_zero_count PASSED        [ 16%]
+tests/unit/test_analytics.py::test_pairwise_change_for_same_event PASSED [ 18%]
+tests/unit/test_analytics.py::test_pairwise_skips_different_sports PASSED [ 19%]
+tests/unit/test_analytics.py::test_filter_by_sport_and_category PASSED   [ 21%]
+tests/unit/test_analytics.py::test_filter_without_criteria_returns_all PASSED [ 22%]
+tests/unit/test_analytics.py::test_mean_uses_approx PASSED               [ 24%]
+tests/unit/test_analytics.py::test_mean_empty_is_none PASSED             [ 26%]
+tests/unit/test_analytics.py::test_best_result_empty_is_none PASSED      [ 27%]
+tests/unit/test_analytics.py::test_best_result_returns_smallest PASSED   [ 29%]
+tests/unit/test_analytics.py::test_batches_split_and_keep_final_partial PASSED [ 31%]
+tests/unit/test_analytics.py::test_batches_reject_nonpositive_size PASSED [ 32%]
+tests/unit/test_application_async.py::test_repository_saves_and_filters[zero] PASSED [ 34%]
+tests/unit/test_application_async.py::test_repository_saves_and_filters[positive] PASSED [ 36%]
+tests/unit/test_application_async.py::test_application_uses_mock_return_value_and_checks_interactions PASSED [ 37%]
+tests/unit/test_application_async.py::test_repository_failure_uses_side_effect_and_skips_notification PASSED [ 39%]
+tests/unit/test_application_async.py::test_async_provider_is_awaited_and_ranked PASSED [ 40%]
+tests/unit/test_application_async.py::test_async_provider_failure_propagates PASSED [ 42%]
+tests/unit/test_io_config_services.py::test_csv_reader_yields_rows_lazily PASSED [ 44%]
+tests/unit/test_io_config_services.py::test_csv_reader_rejects_missing_headers PASSED [ 45%]
+tests/unit/test_io_config_services.py::test_csv_reader_marks_extra_columns PASSED [ 47%]
+tests/unit/test_io_config_services.py::test_csv_reader_wraps_missing_file PASSED [ 49%]
+tests/unit/test_io_config_services.py::test_load_yaml_configuration PASSED [ 50%]
+tests/unit/test_io_config_services.py::test_bad_yaml_has_chained_cause PASSED [ 52%]
+tests/unit/test_io_config_services.py::test_missing_config_has_chained_cause PASSED [ 54%]
+tests/unit/test_io_config_services.py::test_missing_input_is_fail_fast PASSED [ 55%]
+tests/unit/test_io_config_services.py::test_mode_environment_override_uses_monkeypatch PASSED [ 57%]
+tests/unit/test_io_config_services.py::test_invalid_mode_fails_config_validation PASSED [ 59%]
+tests/unit/test_io_config_services.py::test_invalid_range_fails_config_validation PASSED [ 60%]
+tests/unit/test_io_config_services.py::test_tolerant_import_updates_statistics_and_error_list PASSED [ 62%]
+tests/unit/test_io_config_services.py::test_strict_import_stops_at_first_invalid PASSED [ 63%]
+tests/unit/test_io_config_services.py::test_json_export_writes_serializable_results PASSED [ 65%]
+tests/unit/test_io_config_services.py::test_error_export_writes_csv PASSED [ 67%]
+tests/unit/test_io_config_services.py::test_atomic_export_preserves_existing_file_on_replace_failure PASSED [ 68%]
+tests/unit/test_io_config_services.py::test_logging_configuration_creates_utf8_file PASSED [ 70%]
+tests/unit/test_io_config_services.py::test_logged_operation_logs_failure_and_reraises PASSED [ 72%]
+tests/unit/test_io_config_services.py::test_filter_module_can_select_category PASSED [ 73%]
+tests/unit/test_models_validators.py::test_sports_result_serializes_timestamp PASSED [ 75%]
+tests/unit/test_models_validators.py::test_parse_record_normalizes_text PASSED [ 77%]
+tests/unit/test_models_validators.py::test_result_boundaries_are_valid[minimum] PASSED [ 78%]
+tests/unit/test_models_validators.py::test_result_boundaries_are_valid[maximum] PASSED [ 80%]
+tests/unit/test_models_validators.py::test_invalid_record_fields_raise_domain_error[empty-athlete] PASSED [ 81%]
+tests/unit/test_models_validators.py::test_invalid_record_fields_raise_domain_error[unknown-sport] PASSED [ 83%]
+tests/unit/test_models_validators.py::test_invalid_record_fields_raise_domain_error[unknown-category] PASSED [ 85%]
+tests/unit/test_models_validators.py::test_invalid_record_fields_raise_domain_error[not-number] PASSED [ 86%]
+tests/unit/test_models_validators.py::test_invalid_record_fields_raise_domain_error[negative] PASSED [ 88%]
+tests/unit/test_models_validators.py::test_invalid_record_fields_raise_domain_error[nan] PASSED [ 90%]
+tests/unit/test_models_validators.py::test_invalid_record_fields_raise_domain_error[above-max] PASSED [ 91%]
+tests/unit/test_models_validators.py::test_invalid_record_fields_raise_domain_error[bad-time] PASSED [ 93%]
+tests/unit/test_models_validators.py::test_numeric_error_preserves_cause PASSED [ 95%]
+tests/unit/test_models_validators.py::test_missing_result_preserves_key_error PASSED [ 96%]
+tests/unit/test_models_validators.py::test_malformed_row_marker_is_rejected PASSED [ 98%]
+tests/unit/test_models_validators.py::test_timestamp_is_a_datetime PASSED [100%]
+
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.12.2-final-0 _______________
+
+Name                                     Stmts   Miss Branch BrPart  Cover   Missing
+------------------------------------------------------------------------------------
+src\sports_streaming\__init__.py             0      0      0      0   100%
+src\sports_streaming\analytics.py           12      0      6      0   100%
+src\sports_streaming\application.py         11      0      0      0   100%
+src\sports_streaming\async_ranking.py        8      0      0      0   100%
+src\sports_streaming\batches.py              9      0      4      0   100%
+src\sports_streaming\config.py              38      6     16      4    81%   19, 27-28, 36, 38, 43
+src\sports_streaming\exceptions.py          10      0      0      0   100%
+src\sports_streaming\exporters.py           44      0      8      1    98%   23->25
+src\sports_streaming\filters.py              6      0      4      0   100%
+src\sports_streaming\logging_config.py       5      0      0      0   100%
+src\sports_streaming\main.py                46      1      8      1    96%   50
+src\sports_streaming\models.py              26      0      0      0   100%
+src\sports_streaming\notifications.py        2      0      0      0   100%
+src\sports_streaming\readers.py             22      0      6      0   100%
+src\sports_streaming\repositories.py        12      0      0      0   100%
+src\sports_streaming\services.py            63      0     16      0   100%
+src\sports_streaming\validators.py          29      0     12      0   100%
+------------------------------------------------------------------------------------
+TOTAL                                      343      7     80      6    97%
+Coverage HTML written to dir htmlcov
+Required test coverage of 80.0% reached. Total coverage: 96.93%
+============================= 61 passed in 2.19s ==============================
